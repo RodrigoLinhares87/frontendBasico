@@ -1,0 +1,153 @@
+html, body {
+    height: 100%; /* Define a altura total da tela */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    font-family: 'Archivo', sans-serif; /* Define a nova fonte padrão */
+}
+.container {
+    display: flex;
+    flex: 1; /* Faz o container ocupar toda a altura */
+}
+.left {
+    flex: 1; /* Ocupa uma parte da largura */
+    background-color: #e6fff0;
+    color: white;
+    padding: 20px;
+    display: flex; /* Para centralizar a imagem */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+.right {
+    flex: 1; /* Ocupa outra parte da largura */
+    background-color: #FFFFFF;
+    color: black; /* Mudei para preto para melhor contraste */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza os contêineres verticalmente */
+    align-items: center; /* Centraliza horizontalmente os contêineres */
+    justify-content: center; /* Centraliza verticalmente */
+}
+img {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do contêiner */
+    max-width: 300px; /* Define a largura máxima da imagem */
+    max-height: 240px; /* Define a altura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+}
+.header, .form-container, .message {
+    width: 100%; /* Faz os contêineres ocuparem toda a largura */
+    max-width: 300px; /* Define uma largura máxima para os contêineres */
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-bottom: 20px; /* Espaço abaixo de cada contêiner */
+}
+form {
+    display: flex;
+    flex-direction: column; /* Organiza os inputs e botões verticalmente */
+    width: 100%; /* Faz o formulário ocupar toda a largura */
+}
+label {
+    margin-bottom: 5px; /* Espaçamento entre o label e a caixa de entrada */
+    font-size: 14px; /* Tamanho do texto do label */
+    color: #1A202C; /* Cor do texto do label */
+}
+/* Estilos separados para input de texto */
+input[type="text"], input[type="password"] {
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    width: 100%; /* Faz os inputs ocuparem toda a largura */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    margin-bottom: 15px; /* Inclui margem inferior */
+    background-color: #F7FAFC; /* Cor de fundo */
+}
+
+button {
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    width: 100%; /* Faz os botões ocuparem toda a largura */
+    margin-top: 15px; /* Espaço acima dos botões */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+.login-button {
+    background-color: #1E9E6A; /* Cor do botão de login */
+    color: white; /* Cor do texto */
+    margin-top: 34px; /* Margem superior */
+}
+.google-button {
+    background-color: #1A202C; /* Nova cor do botão do Google */
+    color: white; /* Cor do texto */
+    display: flex; /* Alinha a imagem e o texto */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+h1 {
+    margin: 0; /* Remove margem do título */
+    font-size: 16px; /* Tamanho do título reduzido */
+    width: 174px; /* Largura do título */
+    height: 22px; /* Altura do título */
+    color: #1A202C; /* Cor do título */
+    weight: 500;
+    font-weight: 500;
+}
+h2 {
+    margin: 0; /* Remove margem do subtítulo */
+    font-size: 24px; /* Tamanho do subtítulo reduzido */
+    width: 344px; /* Largura do subtítulo */
+    height: 35px; /* Altura do subtítulo */
+    color: #1A202C; /* Cor do subtítulo */
+    weight: 600;
+    font-weight: 600;
+}
+.message {
+    font-size: 14px; /* Tamanho da mensagem */
+    color: #666; /* Cor da mensagem */
+    text-align: center; /* Alinha a mensagem ao centro */
+    font-weight: 500;
+}
+.message a {
+    color: #1E9E6A; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+.message a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o checkbox e o texto */
+    width: 100%; /* Faz o contêiner ocupar toda a largura */
+    justify-content: space-between; /* Espaço entre os dois elementos */
+    margin-top: 0px; /* Espaço acima do checkbox */
+}
+input[type="checkbox"] {
+    display: none; /* Oculta o checkbox padrão */
+}
+.checkbox-label {
+    position: relative;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    padding-left: 20px; /* Espaço à esquerda para o círculo */
+    font-size: 14px; /* Tamanho do texto */
+    color: #1A202C; /* Cor do texto */
+}
+.checkbox-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px; /* Largura do círculo */
+    height: 12px; /* Altura do círculo */
+    border: none; /* Remove a borda do círculo */
+    border-radius: 50%; /* Faz o círculo redondo */
+    background-color: #F7FAFC; /* Cor de fundo do círculo */
+    box-shadow: 0 0 0 2px #E8E8E8; /* Adiciona uma sombra para indicar o estado */
+}
+input[type="checkbox"]:checked + .checkbox-label::before {
+    background-color: #1E9E6A; /* Cor de fundo quando marcado */
+}
+.forgot-password {
+    color: #1E9E6A; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 14px; /* Tamanho do texto */
+}
